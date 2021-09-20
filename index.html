@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf</title>
+    <link rel="stylesheet" href="scss/css/normalize.css">
+    <link rel="stylesheet" href="scss/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="shelf">
+            <h1 class="shelf__title">Книжная полка</h1>
+            <button class="shelf__button" data-path="add">Добавить книгу</button>
+            <div class="shelf__body shelf-item" data-numberItem='0'>
+                <div class="shelf-item__description">
+                    <div class="shelf-item__img">
+                        <img class="shelf-item__cover" src="img/javascript.jpg" alt="">
+                    </div>
+                    <div class="shelf-item__info item-info">
+                        <h3 class="item-info__title">JavaScript. Полное руководство</h3>
+                        <p class="item-info__author">Флэнаган Дэвид</p>
+                        <p class="item-info__year">2021г.</p>
+                    </div>
+                </div>
+                <div class="shelf-item__control">
+                    <button class="shelf-item__edit" data-path="edit" data-numberItem='0'>Редактировать</button>
+                    <button class="shelf-item__delete" data-path="delete" data-numberItem='0'>Удалить</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup-add popup popup-overlay" data-target="add">
+            <div class="popup__body close-popup">
+                <div class="popup__content">
+                    <h2 class="popup__title">Добавить книгу</h2>
+                    <div class="popup__discription">
+                        <input type="text" placeholder="Наименование книги"
+                            class="popup__book-title add-title popup__input">
+                        <input type="text" placeholder="Автор" class="popup__author add-author popup__input">
+                        <input type="text" placeholder="Год выпуска" class="popup__year add-year popup__input">
+                        <input type="text" placeholder="Вставте URL обложки"
+                            class="popup__cover add-cover popup__input">
+                    </div>
+                    <div class="popup__preview">
+                        <img class="popup__preview-img" src="" alt="Тут должна быть обложка">
+                    </div>
+                    <div class="popup__control">
+                        <button class="popup__btn-save popup-add-apply">Добавить</button>
+                        <button class="popup__btn-cancel close-popup">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-edit popup popup-overlay" data-target="edit">
+            <div class="popup__body close-popup">
+                <div class="popup__content">
+                    <h2 class="popup__title">Редактировать книгу</h2>
+                    <div class="popup__discription">
+                        <input type="text" placeholder="Наименование книги"
+                            class="popup__book-title edit-title popup__input">
+                        <input type="text" placeholder="Автор" class="popup__author edit-author popup__input">
+                        <input type="text" placeholder="Год выпуска" class="popup__year edit-year popup__input">
+                        <input type="text" placeholder="Вставте URL обложки"
+                            class="popup__cover edit-cover popup__input">
+                    </div>
+                    <div class="popup__preview">
+                        <img class="popup__preview-img" src="" alt="Тут должна быть обложка">
+                    </div>
+                    <div class="popup__control">
+                        <button class="popup__btn-save popup-edit-apply">Сохранить</button>
+                        <button class="popup__btn-cancel close-popup">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-delete popup popup-overlay" data-target="delete">
+            <div class="popup__body close-popup">
+                <div class="popup__content">
+                    <h2 class="popup__title">Вы действительно хотите удалить книгу?</h2>
+                    <div class="popup__control">
+                        <button class="popup__btn-save delete-book" data-path="delete">Удалить</button>
+                        <button class="popup__btn-cancel close-popup">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/Book.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
